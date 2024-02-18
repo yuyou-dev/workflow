@@ -1,2 +1,2 @@
 # workflow
-ComfyUI workflow
+ComfyUI workflow 持续更新
