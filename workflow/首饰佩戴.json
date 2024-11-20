@@ -1,0 +1,5562 @@
+{
+  "last_node_id": 149,
+  "last_link_id": 307,
+  "nodes": [
+    {
+      "id": 93,
+      "type": "InspyrenetRembg",
+      "pos": {
+        "0": 243.62896728515625,
+        "1": 114.47285461425781
+      },
+      "size": {
+        "0": 315,
+        "1": 78
+      },
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 203,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": null,
+          "label": "IMAGE"
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            206
+          ],
+          "slot_index": 1,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InspyrenetRembg",
+        "ttNbgOverride": {
+          "color": "#1f1f48",
+          "groupcolor": "#88A"
+        }
+      },
+      "widgets_values": [
+        "default"
+      ],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 81,
+      "type": "CR Color Panel",
+      "pos": {
+        "0": 244.62896728515625,
+        "1": -109.52698516845703
+      },
+      "size": {
+        "0": 315,
+        "1": 150
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            207
+          ],
+          "slot_index": 0,
+          "label": "image"
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null,
+          "label": "show_help"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR Color Panel",
+        "ttNbgOverride": {
+          "color": "#1f1f48",
+          "groupcolor": "#88A"
+        }
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        "white",
+        "#000000"
+      ],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 94,
+      "type": "LayerUtility: ImageBlendAdvance V2",
+      "pos": {
+        "0": 589.3916625976562,
+        "1": -103.77716827392578
+      },
+      "size": {
+        "0": 428.4000244140625,
+        "1": 338
+      },
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "background_image",
+          "type": "IMAGE",
+          "link": 207,
+          "label": "background_image"
+        },
+        {
+          "name": "layer_image",
+          "type": "IMAGE",
+          "link": 205,
+          "label": "layer_image"
+        },
+        {
+          "name": "layer_mask",
+          "type": "MASK",
+          "link": 206,
+          "shape": 7,
+          "label": "layer_mask"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            209
+          ],
+          "slot_index": 0,
+          "label": "image"
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null,
+          "label": "mask"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LayerUtility: ImageBlendAdvance V2"
+      },
+      "widgets_values": [
+        false,
+        "normal",
+        100,
+        50,
+        50,
+        "None",
+        1,
+        1,
+        0,
+        "lanczos",
+        0
+      ],
+      "color": "rgba(38, 73, 116, 0.7)"
+    },
+    {
+      "id": 87,
+      "type": "ImagePadForOutpaint",
+      "pos": {
+        "0": 1049.391357421875,
+        "1": -91.77717590332031
+      },
+      "size": {
+        "0": 315,
+        "1": 174
+      },
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 209,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            194,
+            195
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImagePadForOutpaint",
+        "ttNbgOverride": {
+          "color": "#1f1f48",
+          "groupcolor": "#88A"
+        }
+      },
+      "widgets_values": [
+        0,
+        0,
+        1024,
+        0,
+        40
+      ],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 88,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 1395.54833984375,
+        "1": -84.19743347167969
+      },
+      "size": {
+        "0": 354.2427062988281,
+        "1": 246
+      },
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 195,
+          "label": "images"
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage",
+        "ttNbgOverride": {
+          "color": "#1f1f48",
+          "groupcolor": "#88A"
+        }
+      },
+      "widgets_values": [],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": {
+        "0": 2571.85791015625,
+        "1": 494.2193908691406
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 24,
+          "label": "samples"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 12,
+          "label": "vae"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            9,
+            226
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": [],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 13,
+      "type": "SamplerCustomAdvanced",
+      "pos": {
+        "0": 2292.858154296875,
+        "1": 500.2193908691406
+      },
+      "size": {
+        "0": 253.33236694335938,
+        "1": 106
+      },
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "noise",
+          "type": "NOISE",
+          "link": 37,
+          "slot_index": 0,
+          "label": "noise"
+        },
+        {
+          "name": "guider",
+          "type": "GUIDER",
+          "link": 30,
+          "slot_index": 1,
+          "label": "guider"
+        },
+        {
+          "name": "sampler",
+          "type": "SAMPLER",
+          "link": 19,
+          "slot_index": 2,
+          "label": "sampler"
+        },
+        {
+          "name": "sigmas",
+          "type": "SIGMAS",
+          "link": 20,
+          "slot_index": 3,
+          "label": "sigmas"
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 162,
+          "slot_index": 4,
+          "label": "latent_image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "LATENT",
+          "links": [
+            24
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "output"
+        },
+        {
+          "name": "denoised_output",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3,
+          "label": "denoised_output"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SamplerCustomAdvanced"
+      },
+      "widgets_values": [],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 147,
+      "type": "ttN text",
+      "pos": {
+        "0": -1377.8372802734375,
+        "1": 894.098876953125
+      },
+      "size": {
+        "0": 393.8247985839844,
+        "1": 90.63578033447266
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "title": "short",
+      "properties": {
+        "Node name for S&R": "ttN text",
+        "ttNnodeVersion": "1.0.0"
+      },
+      "widgets_values": [
+        "注意2：项链长度较短，吊坠刚好垂在锁骨中央，给人一种精致小巧的感觉，适合凸显锁骨线条",
+        true
+      ]
+    },
+    {
+      "id": 138,
+      "type": "LLM",
+      "pos": {
+        "0": -317.8368225097656,
+        "1": 484.0993347167969
+      },
+      "size": {
+        "0": 494.876220703125,
+        "1": 583.358642578125
+      },
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "CUSTOM",
+          "link": 273,
+          "label": "model"
+        },
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 276,
+          "shape": 7,
+          "label": "images"
+        },
+        {
+          "name": "extra_parameters",
+          "type": "DICT",
+          "link": null,
+          "shape": 7,
+          "label": "extra_parameters"
+        },
+        {
+          "name": "system_prompt_input",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "system_prompt_input"
+          },
+          "shape": 7,
+          "label": "system_prompt_input"
+        },
+        {
+          "name": "user_prompt_input",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "user_prompt_input"
+          },
+          "shape": 7,
+          "label": "user_prompt_input"
+        },
+        {
+          "name": "tools",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "tools"
+          },
+          "shape": 7,
+          "label": "tools"
+        },
+        {
+          "name": "file_content",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "file_content"
+          },
+          "shape": 7,
+          "label": "file_content"
+        },
+        {
+          "name": "user_history",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "user_history"
+          },
+          "shape": 7,
+          "label": "user_history"
+        },
+        {
+          "name": "system_prompt",
+          "type": "STRING",
+          "link": 274,
+          "widget": {
+            "name": "system_prompt"
+          },
+          "label": "system_prompt"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "assistant_response",
+          "type": "STRING",
+          "links": [
+            278,
+            281
+          ],
+          "slot_index": 0,
+          "label": "assistant_response"
+        },
+        {
+          "name": "history",
+          "type": "STRING",
+          "links": null,
+          "label": "history"
+        },
+        {
+          "name": "tool",
+          "type": "STRING",
+          "links": null,
+          "slot_index": 2,
+          "label": "tool"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "label": "image"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLM",
+        "ttNbgOverride": {
+          "color": "#1f1f48",
+          "groupcolor": "#88A"
+        }
+      },
+      "widgets_values": [
+        "我正在做一个富有创意的商业广告设计，下面是一个例子：\n\nThis image is a dramatic CGI advertisement for the Mazda CX-5, set against a twilight sky filled with swirling patterns of fire and smoke. The background features a colossal abstract shape of a phoenix rising from the flames, symbolizing rebirth and resilience. In the foreground, a sleek red Mazda CX-5 is depicted driving through a winding road, with the fiery phoenix pattern illuminating the scene, emphasizing its dynamic performance.\n\nThe fiery hues of orange, red, and gold blend together in the sky, creating a captivating contrast with the darkening surroundings. The text at the top center reads, \"RISE ABOVE,\" while below it, \"Experience the spirit of driving with Mazda CX-5,\" emphasizing its agility and strength. The Mazda logo is prominently displayed in the bottom right corner, accompanied by the tagline “Driving Matters.” The overall atmosphere is powerful and inspiring, showcasing the brand's dedication to performance and resilience.\n\n我希望你参考这个模板，从以下方面做一些变化，给我一些更多的案例：\n\n1. 发挥想象力，选择一个超现实的环境和与之搭配的意象（图案，动物虚幻形态，漂浮物体，动感镜头等等），这个画面需要能够体现出这个产品的某个特点\n2. 适当搭配文字排版，让构图更加专业\n3. 英文回复，只要直接回复给我内容，不要加其他的任何前后缀，问候语等。",
+        "英文回复，只要直接回复给我内容，不要加其他的任何前后缀，问候语等。",
+        0.6000000000000001,
+        "enable",
+        "disable",
+        "disable",
+        "enable",
+        1920,
+        "",
+        "",
+        "",
+        "",
+        "",
+        100,
+        "",
+        true,
+        "",
+        true,
+        true
+      ],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 139,
+      "type": "StringFunction|pysssss",
+      "pos": {
+        "0": -907.837646484375,
+        "1": 494.0993957519531
+      },
+      "size": {
+        "0": 551.9170532226562,
+        "1": 787.5899047851562
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_c",
+          "type": "STRING",
+          "link": 302,
+          "widget": {
+            "name": "text_c"
+          },
+          "shape": 7
+        },
+        {
+          "name": "text_b",
+          "type": "STRING",
+          "link": 303,
+          "widget": {
+            "name": "text_b"
+          },
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            274
+          ],
+          "slot_index": 0,
+          "label": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "StringFunction|pysssss",
+        "ttNbgOverride": {
+          "color": "#1f1f48",
+          "groupcolor": "#88A"
+        }
+      },
+      "widgets_values": [
+        "append",
+        "yes",
+        "根据现在的图片，想要描述一下，按照这样一种格式：\n[necklace display]整体描述[image 1] On the left, 左边的图，详细描述项链的样式 [image 2] On the right, 想象描述项链由模特佩戴的样子\n\n例如：\n[Necklace display] This refined necklace features a short gold chain designed to sit elegantly just above the collarbone, making it a graceful accent piece that subtly enhances any look. The necklace’s centerpiece is a small quatrefoil pendant, about the size of a thumbnail, that combines sophistication with understated charm.\n\n[image 1] On the left, the necklace is displayed against a simple background, allowing the details of the petite pendant to be fully appreciated. The pendant is shaped in a classic quatrefoil design, with a deep red center surrounded by a gold beaded border. The gold beads add a hint of texture, enhancing the pendant's visual interest despite its small size. The compact dimensions and rich color combination make it a striking yet delicate accessory, ideal for a minimalist style.\n\n[image 2] On the right, imagine the necklace worn by a model, with the chain positioned just above the collarbone for a refined and delicate appearance. The small, red quatrefoil pendant rests close to her neck, drawing subtle attention to the area with a touch of color and elegance. The deep red center contrasts softly against her skin, while the gold beaded border adds a gentle sparkle in the light. The necklace’s short length and petite pendant create a balanced, sophisticated look that complements her outfit without overpowering it, adding a hint of elegance right above her collarbone.\n",
+        "",
+        "",
+        true,
+        true,
+        true,
+        ""
+      ],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 16,
+      "type": "KSamplerSelect",
+      "pos": {
+        "0": 2076.85888671875,
+        "1": 1042.2197265625
+      },
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "SAMPLER",
+          "type": "SAMPLER",
+          "links": [
+            19
+          ],
+          "shape": 3,
+          "label": "SAMPLER"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerSelect"
+      },
+      "widgets_values": [
+        "euler"
+      ],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 25,
+      "type": "RandomNoise",
+      "pos": {
+        "0": 2077.85888671875,
+        "1": 914.219482421875
+      },
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "NOISE",
+          "type": "NOISE",
+          "links": [
+            37
+          ],
+          "shape": 3,
+          "label": "NOISE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "RandomNoise"
+      },
+      "widgets_values": [
+        1115871418068839,
+        "randomize"
+      ],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 22,
+      "type": "BasicGuider",
+      "pos": {
+        "0": 2114.8583984375,
+        "1": 824.2193603515625
+      },
+      "size": {
+        "0": 161.1999969482422,
+        "1": 46
+      },
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 54,
+          "slot_index": 0,
+          "label": "model"
+        },
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 151,
+          "slot_index": 1,
+          "label": "conditioning"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GUIDER",
+          "type": "GUIDER",
+          "links": [
+            30
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "GUIDER"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicGuider"
+      },
+      "widgets_values": [],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 52,
+      "type": "VAEEncode",
+      "pos": {
+        "0": 1870.85888671875,
+        "1": 740.219482421875
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 194,
+          "label": "pixels"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 158,
+          "label": "vae"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            159
+          ],
+          "slot_index": 0,
+          "label": "LATENT"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEEncode",
+        "ttNbgOverride": {
+          "color": "#1f1f48",
+          "groupcolor": "#88A"
+        }
+      },
+      "widgets_values": [],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 54,
+      "type": "ImageToMask",
+      "pos": {
+        "0": 1874.85888671875,
+        "1": 842.2193603515625
+      },
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 160,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            161
+          ],
+          "slot_index": 0,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageToMask"
+      },
+      "widgets_values": [
+        "red"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 26,
+      "type": "FluxGuidance",
+      "pos": {
+        "0": 1858.85888671875,
+        "1": 950.219482421875
+      },
+      "size": {
+        "0": 211.60000610351562,
+        "1": 58
+      },
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 41,
+          "label": "conditioning"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            151
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "CONDITIONING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FluxGuidance"
+      },
+      "widgets_values": [
+        2.5
+      ],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": {
+        "0": 1555.859130859375,
+        "1": 945.219482421875
+      },
+      "size": {
+        "0": 285.6000061035156,
+        "1": 59
+      },
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 119,
+          "label": "clip"
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 220,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            41
+          ],
+          "slot_index": 0,
+          "label": "CONDITIONING"
+        }
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "The two-panel image showcases a modern coffee shop brand, with the left panel displaying a sleek coffee cup graphic and the brand name “Brewed Awakenings” in a contemporary serif font on a warm beige background; [LEFT] while the right panel translates the design onto a stylish takeout coffee cup sleeve, placed on a rustic wooden table in a lively café atmosphere.",
+        true
+      ],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 10,
+      "type": "VAELoader",
+      "pos": {
+        "0": 1526.859130859375,
+        "1": 744.219482421875
+      },
+      "size": {
+        "0": 311.81634521484375,
+        "1": 60.429901123046875
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            12,
+            158
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "VAE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "Flux/ae.safetensors"
+      ],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 53,
+      "type": "LoadImage",
+      "pos": {
+        "0": 1552.859130859375,
+        "1": 1055.2197265625
+      },
+      "size": {
+        "0": 301.26641845703125,
+        "1": 314
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            160
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "label": "MASK"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "mask2.jpg",
+        "image"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 12,
+      "type": "UNETLoader",
+      "pos": {
+        "0": 756.8599243164062,
+        "1": 457.21942138671875
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            117
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "MODEL"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UNETLoader"
+      },
+      "widgets_values": [
+        "FLUX.1-dev/flux1-dev-fp8.safetensors",
+        "fp8_e4m3fn"
+      ],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 11,
+      "type": "DualCLIPLoader",
+      "pos": {
+        "0": 766.8599243164062,
+        "1": 593.2193603515625
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            118
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "CLIP"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DualCLIPLoader"
+      },
+      "widgets_values": [
+        "Flux/t5xxl_fp16.safetensors",
+        "clip_l.safetensors",
+        "flux"
+      ],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 144,
+      "type": "ttN text",
+      "pos": {
+        "0": -1371.6888427734375,
+        "1": 474.09930419921875
+      },
+      "size": {
+        "0": 398.298583984375,
+        "1": 91.91592407226562
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "title": "small size",
+      "properties": {
+        "Node name for S&R": "ttN text",
+        "ttNnodeVersion": "1.0.0"
+      },
+      "widgets_values": [
+        "注意1：这个项链很小，和拇指一样大小。项链小巧精致，吊坠尺寸与人的拇指相当，适合喜欢细腻、低调风格的佩戴者。整体设计偏向简约，适合日常佩戴或搭配其他饰品叠戴",
+        true
+      ]
+    },
+    {
+      "id": 99,
+      "type": "Reroute",
+      "pos": {
+        "0": 481.88690185546875,
+        "1": 393.34014892578125
+      },
+      "size": [
+        90.4,
+        26
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 278,
+          "label": "",
+          "widget": {
+            "name": "value"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            220
+          ],
+          "slot_index": 0,
+          "label": "STRING"
+        }
+      ],
+      "properties": {
+        "showOutputText": true,
+        "horizontal": false,
+        "ttNbgOverride": {
+          "color": "#1f1f48",
+          "groupcolor": "#88A"
+        }
+      },
+      "color": "#1f1f48"
+    },
+    {
+      "id": 50,
+      "type": "SetLatentNoiseMask",
+      "pos": {
+        "0": 2079.61083984375,
+        "1": 612.3555908203125
+      },
+      "size": {
+        "0": 176.39999389648438,
+        "1": 46
+      },
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 159,
+          "label": "samples"
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 161,
+          "label": "mask"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            162
+          ],
+          "slot_index": 0,
+          "label": "LATENT"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SetLatentNoiseMask"
+      },
+      "widgets_values": [],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 17,
+      "type": "BasicScheduler",
+      "pos": {
+        "0": 2049.61083984375,
+        "1": 451.35565185546875
+      },
+      "size": {
+        "0": 210,
+        "1": 106
+      },
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 55,
+          "slot_index": 0,
+          "label": "model"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            20
+          ],
+          "shape": 3,
+          "label": "SIGMAS"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BasicScheduler"
+      },
+      "widgets_values": [
+        "simple",
+        35,
+        1
+      ],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 30,
+      "type": "ModelSamplingFlux",
+      "pos": {
+        "0": 1701.61083984375,
+        "1": 456.35565185546875
+      },
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 120,
+          "slot_index": 0,
+          "label": "model"
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 115,
+          "slot_index": 1,
+          "widget": {
+            "name": "width"
+          },
+          "label": "width"
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 114,
+          "slot_index": 2,
+          "widget": {
+            "name": "height"
+          },
+          "label": "height"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            54,
+            55
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "MODEL"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelSamplingFlux"
+      },
+      "widgets_values": [
+        1.15,
+        0.5,
+        2048,
+        1024
+      ],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 34,
+      "type": "PrimitiveNode",
+      "pos": {
+        "0": 1247.6116943359375,
+        "1": 652.355712890625
+      },
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            115
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "width"
+          },
+          "label": "INT"
+        }
+      ],
+      "title": "width",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        2048,
+        "fixed"
+      ],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 35,
+      "type": "PrimitiveNode",
+      "pos": {
+        "0": 1253.6116943359375,
+        "1": 793.3555908203125
+      },
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            114
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "height"
+          },
+          "label": "INT"
+        }
+      ],
+      "title": "height",
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        1024,
+        "fixed"
+      ],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": {
+        "0": 2801.610107421875,
+        "1": 488.3556213378906
+      },
+      "size": {
+        "0": 878.6614990234375,
+        "1": 768.90478515625
+      },
+      "flags": {},
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 9,
+          "label": "images"
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "in-context/a"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 148,
+      "type": "ttN text",
+      "pos": {
+        "0": -1377.8372802734375,
+        "1": 1024.0992431640625
+      },
+      "size": {
+        "0": 398.298583984375,
+        "1": 91.91592407226562
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "title": "middle",
+      "properties": {
+        "Node name for S&R": "ttN text",
+        "ttNnodeVersion": "1.0.0"
+      },
+      "widgets_values": [
+        "注意2：项链长度适中，吊坠位置在胸部附近，整体给人一种优雅而不失大方的气质",
+        true
+      ]
+    },
+    {
+      "id": 146,
+      "type": "ttN text",
+      "pos": {
+        "0": -1377.8372802734375,
+        "1": 754.099609375
+      },
+      "size": {
+        "0": 398.298583984375,
+        "1": 91.91592407226562
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "title": "large size",
+      "properties": {
+        "Node name for S&R": "ttN text",
+        "ttNnodeVersion": "1.0.0"
+      },
+      "widgets_values": [
+        "注意1：项链整体设计夸张，吊坠体积较大，成为视觉焦点，能为穿搭增添强烈的个性化风格。",
+        true
+      ]
+    },
+    {
+      "id": 145,
+      "type": "ttN text",
+      "pos": {
+        "0": -1377.8372802734375,
+        "1": 614.0994873046875
+      },
+      "size": {
+        "0": 398.298583984375,
+        "1": 91.91592407226562
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            302
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "middle size",
+      "properties": {
+        "Node name for S&R": "ttN text",
+        "ttNnodeVersion": "1.0.0"
+      },
+      "widgets_values": [
+        "注意1：项链的尺寸适中，吊坠比拇指略大，既不会显得过于张扬，也不会太过小巧。它平衡了存在感和舒适度，适合正式场合或日常穿搭，显得优雅大方。",
+        true
+      ]
+    },
+    {
+      "id": 149,
+      "type": "ttN text",
+      "pos": {
+        "0": -1387.8372802734375,
+        "1": 1174.0986328125
+      },
+      "size": {
+        "0": 398.298583984375,
+        "1": 91.91592407226562
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "links": [
+            303
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "long",
+      "properties": {
+        "Node name for S&R": "ttN text",
+        "ttNnodeVersion": "1.0.0"
+      },
+      "widgets_values": [
+        "注意2：项链长度较长，吊坠垂至胸部以下，接近腹部的位置，展现一种随性与时尚感。",
+        true
+      ]
+    },
+    {
+      "id": 38,
+      "type": "LoraLoader",
+      "pos": {
+        "0": 1179.6116943359375,
+        "1": 474.3556213378906
+      },
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 117,
+          "label": "model"
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 118,
+          "label": "clip"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            120
+          ],
+          "slot_index": 0,
+          "label": "MODEL"
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            119
+          ],
+          "slot_index": 1,
+          "label": "CLIP"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "necklace-wearing_000018000.safetensors",
+        1,
+        1
+      ],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 104,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 4068,
+        "1": -270
+      },
+      "size": {
+        "0": 1053.40966796875,
+        "1": 832.3356323242188
+      },
+      "flags": {},
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 227
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 83,
+      "type": "LoadAndResizeImage",
+      "pos": {
+        "0": -1620,
+        "1": -255
+      },
+      "size": {
+        "0": 306.9814147949219,
+        "1": 618.7351684570312
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            203,
+            205,
+            276
+          ],
+          "slot_index": 0,
+          "label": "image"
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null,
+          "slot_index": 1,
+          "label": "mask"
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "label": "width"
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "label": "height"
+        },
+        {
+          "name": "image_path",
+          "type": "STRING",
+          "links": null,
+          "label": "image_path"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadAndResizeImage",
+        "ttNbgOverride": {
+          "color": "#1f1f48",
+          "groupcolor": "#88A"
+        }
+      },
+      "widgets_values": [
+        "yuyou80_Create_a_minimalistic_2D_design_of_a_rose_gold_purse__45ebff64-19bf-4d2d-9fe9-b7df7e1a8956_3.png",
+        true,
+        1024,
+        1024,
+        1,
+        true,
+        2,
+        "alpha",
+        "",
+        "image"
+      ],
+      "color": "#1f1f48"
+    },
+    {
+      "id": 103,
+      "type": "ImageCrop+",
+      "pos": {
+        "0": 3639,
+        "1": -282
+      },
+      "size": {
+        "0": 315,
+        "1": 194
+      },
+      "flags": {},
+      "order": 37,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 226
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            227
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "x",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "y",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCrop+"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        "top-right",
+        0,
+        0
+      ]
+    },
+    {
+      "id": 140,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": 208.30075073242188,
+        "1": 491.8622741699219
+      },
+      "size": [
+        338.87061906598683,
+        581.4155087724153
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 281,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 0,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        [
+          "[Necklace display] This elegant necklace features a fine gold chain designed to rest delicately just above the collarbone, showcasing its refined beauty. The focal point is a vibrant red quatrefoil pendant, exuding sophistication and charm. [image 1] On the left, the necklace is presented against a clean background, highlighting the rich red color of the pendant and the intricate gold detailing. The quatrefoil shape, with its smooth surface, creates a striking visual appeal, while the gold beaded border adds a touch of texture. [image 2] While the right panel features the necklace worn by a model, the chain gracefully sits above her collarbone, drawing attention to the stunning red quatrefoil pendant. The bold color enhances her outfit, while the delicate design adds a touch of elegance, making it a perfect accessory for any occasion."
+        ],
+        "[Necklace display] This striking necklace features a polished rose gold padlock pendant, offering a contemporary and stylish look. The sleek design of the padlock adds a playful yet elegant touch, making it a standout accessory. [image 1] On the left, the necklace is displayed against a soft background, highlighting the smooth and reflective surface of the rose gold pendant. The minimalist design emphasizes the pendant's unique charm. [image 2] On the right, imagine the necklace worn by a model, resting gracefully on her collarbone. The padlock pendant adds a distinctive element to her outfit, making it suitable for both casual and formal occasions. The delicate chain allows the pendant to shine, showcasing individuality and modern flair."
+      ]
+    },
+    {
+      "id": 137,
+      "type": "LLM_api_loader",
+      "pos": {
+        "0": -730,
+        "1": 174
+      },
+      "size": {
+        "0": 350,
+        "1": 130
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "CUSTOM",
+          "links": [
+            273
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "model"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLM_api_loader"
+      },
+      "widgets_values": [
+        "gpt-4o-mini",
+        "https://api.openai.com/v1",
+        "填写你的apikey",
+        false
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159",
+      "shape": 1
+    }
+  ],
+  "links": [
+    [
+      9,
+      8,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      12,
+      10,
+      0,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      19,
+      16,
+      0,
+      13,
+      2,
+      "SAMPLER"
+    ],
+    [
+      20,
+      17,
+      0,
+      13,
+      3,
+      "SIGMAS"
+    ],
+    [
+      24,
+      13,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      30,
+      22,
+      0,
+      13,
+      1,
+      "GUIDER"
+    ],
+    [
+      37,
+      25,
+      0,
+      13,
+      0,
+      "NOISE"
+    ],
+    [
+      41,
+      6,
+      0,
+      26,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      54,
+      30,
+      0,
+      22,
+      0,
+      "MODEL"
+    ],
+    [
+      55,
+      30,
+      0,
+      17,
+      0,
+      "MODEL"
+    ],
+    [
+      114,
+      35,
+      0,
+      30,
+      2,
+      "INT"
+    ],
+    [
+      115,
+      34,
+      0,
+      30,
+      1,
+      "INT"
+    ],
+    [
+      117,
+      12,
+      0,
+      38,
+      0,
+      "MODEL"
+    ],
+    [
+      118,
+      11,
+      0,
+      38,
+      1,
+      "CLIP"
+    ],
+    [
+      119,
+      38,
+      1,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      120,
+      38,
+      0,
+      30,
+      0,
+      "MODEL"
+    ],
+    [
+      151,
+      26,
+      0,
+      22,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      158,
+      10,
+      0,
+      52,
+      1,
+      "VAE"
+    ],
+    [
+      159,
+      52,
+      0,
+      50,
+      0,
+      "LATENT"
+    ],
+    [
+      160,
+      53,
+      0,
+      54,
+      0,
+      "IMAGE"
+    ],
+    [
+      161,
+      54,
+      0,
+      50,
+      1,
+      "MASK"
+    ],
+    [
+      162,
+      50,
+      0,
+      13,
+      4,
+      "LATENT"
+    ],
+    [
+      194,
+      87,
+      0,
+      52,
+      0,
+      "IMAGE"
+    ],
+    [
+      195,
+      87,
+      0,
+      88,
+      0,
+      "IMAGE"
+    ],
+    [
+      203,
+      83,
+      0,
+      93,
+      0,
+      "IMAGE"
+    ],
+    [
+      205,
+      83,
+      0,
+      94,
+      1,
+      "IMAGE"
+    ],
+    [
+      206,
+      93,
+      1,
+      94,
+      2,
+      "MASK"
+    ],
+    [
+      207,
+      81,
+      0,
+      94,
+      0,
+      "IMAGE"
+    ],
+    [
+      209,
+      94,
+      0,
+      87,
+      0,
+      "IMAGE"
+    ],
+    [
+      220,
+      99,
+      0,
+      6,
+      1,
+      "STRING"
+    ],
+    [
+      226,
+      8,
+      0,
+      103,
+      0,
+      "IMAGE"
+    ],
+    [
+      227,
+      103,
+      0,
+      104,
+      0,
+      "IMAGE"
+    ],
+    [
+      273,
+      137,
+      0,
+      138,
+      0,
+      "CUSTOM"
+    ],
+    [
+      274,
+      139,
+      0,
+      138,
+      8,
+      "STRING"
+    ],
+    [
+      276,
+      83,
+      0,
+      138,
+      1,
+      "IMAGE"
+    ],
+    [
+      278,
+      138,
+      0,
+      99,
+      0,
+      "*"
+    ],
+    [
+      281,
+      138,
+      0,
+      140,
+      0,
+      "STRING"
+    ],
+    [
+      302,
+      145,
+      0,
+      139,
+      0,
+      "STRING"
+    ],
+    [
+      303,
+      149,
+      0,
+      139,
+      1,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Flux出图",
+      "bounding": [
+        668,
+        358,
+        3041,
+        1041
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "底图准备",
+      "bounding": [
+        209,
+        -192,
+        1585,
+        469
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "LLM提示词",
+      "bounding": [
+        -1423,
+        359,
+        2027,
+        962
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.23579476910000097,
+      "offset": [
+        1719.3355005233122,
+        1170.4028254124737
+      ]
+    },
+    "groupNodes": {
+      "yuyou::test": {
+        "author": "yuyou",
+        "category": "yuyou/m-1",
+        "config": {
+          "1": {
+            "input": {
+              "crop": {
+                "visible": false
+              },
+              "upscale_method": {
+                "visible": false
+              }
+            }
+          }
+        },
+        "datetime": 1710319936483,
+        "external": [
+          [
+            1,
+            0,
+            "IMAGE"
+          ]
+        ],
+        "links": [
+          [
+            0,
+            0,
+            1,
+            0,
+            336,
+            "IMAGE"
+          ],
+          [
+            null,
+            0,
+            1,
+            1,
+            321,
+            "INT"
+          ],
+          [
+            null,
+            0,
+            1,
+            2,
+            322,
+            "INT"
+          ]
+        ],
+        "nodes": [
+          {
+            "flags": {},
+            "index": 0,
+            "mode": 0,
+            "order": 18,
+            "outputs": [
+              {
+                "links": [],
+                "name": "IMAGE",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "IMAGE"
+              },
+              {
+                "links": null,
+                "name": "MASK",
+                "shape": 3,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              -605,
+              1471
+            ],
+            "properties": {
+              "Node name for S&R": "LoadImage"
+            },
+            "size": {
+              "0": 532.137451171875,
+              "1": 394.81610107421875
+            },
+            "type": "LoadImage",
+            "widgets_values": [
+              "yuyou80_On_a_clear_day_imagine_the_bright_futuristic_cityscape__9ef417a3-ff47-4e53-8ac9-2c70a6aaa018.png",
+              "image"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 1,
+            "inputs": [
+              {
+                "link": null,
+                "name": "image",
+                "type": "IMAGE"
+              },
+              {
+                "link": null,
+                "name": "width",
+                "type": "INT",
+                "widget": {
+                  "name": "width"
+                }
+              },
+              {
+                "link": null,
+                "name": "height",
+                "type": "INT",
+                "widget": {
+                  "name": "height"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 36,
+            "outputs": [
+              {
+                "links": [],
+                "name": "IMAGE",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "IMAGE"
+              }
+            ],
+            "pos": [
+              -45,
+              1471
+            ],
+            "properties": {
+              "Node name for S&R": "ImageScale"
+            },
+            "size": {
+              "0": 261.1660461425781,
+              "1": 122
+            },
+            "type": "ImageScale",
+            "widgets_values": [
+              "nearest-exact",
+              512,
+              512,
+              "disabled"
+            ]
+          }
+        ],
+        "packname": "",
+        "version": "0.0"
+      },
+      "yuyou::upload and upscale": {
+        "author": "YuYou",
+        "category": "util/yuyou",
+        "config": {
+          "1": {
+            "input": {
+              "crop": {
+                "visible": false
+              },
+              "upscale_method": {
+                "visible": false
+              }
+            }
+          }
+        },
+        "datetime": 1709481265625,
+        "external": [],
+        "links": [
+          [
+            0,
+            0,
+            1,
+            0,
+            289,
+            "IMAGE"
+          ]
+        ],
+        "nodes": [
+          {
+            "flags": {},
+            "index": 0,
+            "mode": 0,
+            "order": 19,
+            "outputs": [
+              {
+                "links": [],
+                "name": "IMAGE",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "IMAGE"
+              },
+              {
+                "links": null,
+                "name": "MASK",
+                "shape": 3,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              420,
+              2700
+            ],
+            "properties": {
+              "Node name for S&R": "LoadImage"
+            },
+            "size": {
+              "0": 532.137451171875,
+              "1": 394.81610107421875
+            },
+            "type": "LoadImage",
+            "widgets_values": [
+              "p2-3 (2).png",
+              "image"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 1,
+            "inputs": [
+              {
+                "link": null,
+                "name": "image",
+                "type": "IMAGE"
+              },
+              {
+                "link": null,
+                "name": "width",
+                "type": "INT",
+                "widget": {
+                  "name": "width"
+                }
+              },
+              {
+                "link": null,
+                "name": "height",
+                "type": "INT",
+                "widget": {
+                  "name": "height"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 32,
+            "outputs": [
+              {
+                "links": [],
+                "name": "IMAGE",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "IMAGE"
+              }
+            ],
+            "pos": [
+              980,
+              2700
+            ],
+            "properties": {
+              "Node name for S&R": "ImageScale"
+            },
+            "size": {
+              "0": 261.1660461425781,
+              "1": 122
+            },
+            "type": "ImageScale",
+            "widgets_values": [
+              "nearest-exact",
+              512,
+              512,
+              "disabled"
+            ]
+          }
+        ],
+        "packname": "",
+        "version": "0.0"
+      },
+      "yuyou-dev::Mask_center": {
+        "author": "yuyou-dev",
+        "category": "mask_plus",
+        "config": {
+          "0": {
+            "input": {
+              "value": {
+                "name": "Length"
+              }
+            }
+          },
+          "1": {
+            "input": {
+              "value": {
+                "name": "start"
+              }
+            }
+          },
+          "2": {
+            "input": {
+              "value": {
+                "name": "end"
+              }
+            }
+          },
+          "3": {
+            "input": {
+              "end_frame": {
+                "visible": false
+              },
+              "start_frame": {
+                "visible": false
+              }
+            }
+          },
+          "4": {
+            "input": {
+              "value": {
+                "visible": true
+              }
+            },
+            "output": {
+              "1": {
+                "visible": false
+              }
+            }
+          },
+          "6": {
+            "input": {
+              "value": {
+                "visible": true
+              }
+            },
+            "output": {
+              "1": {
+                "visible": false
+              }
+            }
+          },
+          "10": {
+            "input": {
+              "method": {
+                "visible": true
+              }
+            },
+            "output": {
+              "0": {
+                "visible": false
+              }
+            }
+          },
+          "12": {
+            "input": {
+              "method": {
+                "visible": true
+              }
+            },
+            "output": {
+              "0": {
+                "visible": true
+              }
+            }
+          }
+        },
+        "datetime": 1721201085959,
+        "external": [],
+        "links": [
+          [
+            0,
+            0,
+            3,
+            0,
+            21,
+            "INT"
+          ],
+          [
+            1,
+            0,
+            4,
+            0,
+            29,
+            "INT"
+          ],
+          [
+            0,
+            0,
+            4,
+            1,
+            21,
+            "INT"
+          ],
+          [
+            3,
+            0,
+            5,
+            0,
+            2,
+            "MASK"
+          ],
+          [
+            4,
+            0,
+            6,
+            0,
+            31,
+            "INT"
+          ],
+          [
+            2,
+            0,
+            6,
+            1,
+            33,
+            "INT"
+          ],
+          [
+            3,
+            0,
+            7,
+            0,
+            2,
+            "MASK"
+          ],
+          [
+            5,
+            0,
+            7,
+            1,
+            1,
+            "MASK"
+          ],
+          [
+            7,
+            0,
+            8,
+            0,
+            13,
+            "MASK"
+          ],
+          [
+            7,
+            0,
+            9,
+            0,
+            13,
+            "MASK"
+          ],
+          [
+            9,
+            0,
+            10,
+            0,
+            23,
+            "MASK"
+          ],
+          [
+            4,
+            0,
+            10,
+            1,
+            31,
+            "INT"
+          ],
+          [
+            10,
+            0,
+            11,
+            0,
+            25,
+            "MASK"
+          ],
+          [
+            10,
+            0,
+            12,
+            0,
+            25,
+            "MASK"
+          ],
+          [
+            6,
+            0,
+            12,
+            1,
+            32,
+            "INT"
+          ],
+          [
+            12,
+            0,
+            13,
+            0,
+            27,
+            "MASK"
+          ]
+        ],
+        "nodes": [
+          {
+            "flags": {},
+            "index": 0,
+            "mode": 0,
+            "order": 0,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              870,
+              1080
+            ],
+            "properties": {
+              "Node name for S&R": "Int"
+            },
+            "size": {
+              "0": 210,
+              "1": 58
+            },
+            "type": "Int",
+            "widgets_values": [
+              16
+            ]
+          },
+          {
+            "flags": {},
+            "index": 1,
+            "mode": 0,
+            "order": 1,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              880,
+              970
+            ],
+            "properties": {
+              "Node name for S&R": "StartFrame"
+            },
+            "size": {
+              "0": 210,
+              "1": 58
+            },
+            "title": "StartFrame",
+            "type": "Int",
+            "widgets_values": [
+              2
+            ]
+          },
+          {
+            "flags": {},
+            "index": 2,
+            "mode": 0,
+            "order": 2,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              880,
+              870
+            ],
+            "properties": {
+              "Node name for S&R": "AddEndFrame"
+            },
+            "size": {
+              "0": 210,
+              "1": 58
+            },
+            "title": "AddEndFrame",
+            "type": "Int",
+            "widgets_values": [
+              6
+            ]
+          },
+          {
+            "flags": {},
+            "index": 3,
+            "inputs": [
+              {
+                "link": null,
+                "name": "frames",
+                "type": "INT",
+                "widget": {
+                  "name": "frames"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 3,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              1160,
+              1160
+            ],
+            "properties": {
+              "Node name for S&R": "TransitionMask+"
+            },
+            "size": {
+              "0": 210,
+              "1": 178
+            },
+            "type": "TransitionMask+",
+            "widgets_values": [
+              576,
+              1024,
+              34,
+              0,
+              9999,
+              "vertical slide",
+              "linear"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 4,
+            "inputs": [
+              {
+                "link": null,
+                "name": "a",
+                "type": "INT,FLOAT"
+              },
+              {
+                "link": null,
+                "name": "b",
+                "type": "INT,FLOAT"
+              }
+            ],
+            "mode": 0,
+            "order": 4,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              },
+              {
+                "links": null,
+                "name": "FLOAT",
+                "shape": 3,
+                "type": "FLOAT"
+              }
+            ],
+            "pos": [
+              1571,
+              1020
+            ],
+            "properties": {
+              "Node name for S&R": "SimpleMath+"
+            },
+            "size": {
+              "0": 210,
+              "1": 78
+            },
+            "type": "SimpleMath+",
+            "widgets_values": [
+              "a + b * 2"
+            ]
+          },
+          {
+            "bgcolor": "#3f5159",
+            "color": "#2a363b",
+            "flags": {},
+            "index": 5,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              }
+            ],
+            "mode": 0,
+            "order": 5,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              1400,
+              1160
+            ],
+            "properties": {
+              "Node name for S&R": "InvertMask"
+            },
+            "size": {
+              "0": 140,
+              "1": 26
+            },
+            "type": "InvertMask"
+          },
+          {
+            "flags": {},
+            "index": 6,
+            "inputs": [
+              {
+                "link": null,
+                "name": "a",
+                "type": "INT,FLOAT"
+              },
+              {
+                "link": null,
+                "name": "b",
+                "type": "INT,FLOAT"
+              }
+            ],
+            "mode": 0,
+            "order": 6,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              },
+              {
+                "links": null,
+                "name": "FLOAT",
+                "shape": 3,
+                "type": "FLOAT"
+              }
+            ],
+            "pos": [
+              1950,
+              950
+            ],
+            "properties": {
+              "Node name for S&R": "SimpleMath+"
+            },
+            "size": {
+              "0": 210,
+              "1": 78
+            },
+            "type": "SimpleMath+",
+            "widgets_values": [
+              "a + b"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 7,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask1",
+                "type": "MASK"
+              },
+              {
+                "link": null,
+                "name": "mask2",
+                "type": "MASK"
+              }
+            ],
+            "mode": 0,
+            "order": 7,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              1570,
+              1150
+            ],
+            "properties": {
+              "Node name for S&R": "MaskBatch+"
+            },
+            "size": {
+              "0": 210,
+              "1": 46
+            },
+            "type": "MaskBatch+"
+          },
+          {
+            "flags": {},
+            "index": 8,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              }
+            ],
+            "mode": 0,
+            "order": 8,
+            "pos": [
+              2591,
+              1536
+            ],
+            "properties": {
+              "Node name for S&R": "MaskPreview+"
+            },
+            "size": {
+              "0": 210,
+              "1": 246
+            },
+            "type": "MaskPreview+"
+          },
+          {
+            "flags": {},
+            "index": 9,
+            "inputs": [
+              {
+                "link": null,
+                "name": "",
+                "type": "*"
+              }
+            ],
+            "mode": 0,
+            "order": 9,
+            "outputs": [
+              {
+                "links": null,
+                "name": "",
+                "type": "*"
+              }
+            ],
+            "pos": [
+              1800,
+              1120
+            ],
+            "properties": {
+              "horizontal": false,
+              "showOutputText": false
+            },
+            "size": [
+              75,
+              26
+            ],
+            "type": "Reroute"
+          },
+          {
+            "flags": {},
+            "index": 10,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              },
+              {
+                "link": null,
+                "name": "size",
+                "type": "INT",
+                "widget": {
+                  "name": "size"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 10,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              1950,
+              1080
+            ],
+            "properties": {
+              "Node name for S&R": "MaskExpandBatch+"
+            },
+            "size": {
+              "0": 210,
+              "1": 82
+            },
+            "type": "MaskExpandBatch+",
+            "widgets_values": [
+              50,
+              "repeat first"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 11,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              }
+            ],
+            "mode": 0,
+            "order": 11,
+            "pos": [
+              2584,
+              1150
+            ],
+            "properties": {
+              "Node name for S&R": "MaskPreview+"
+            },
+            "size": {
+              "0": 203.88900756835938,
+              "1": 323.95977783203125
+            },
+            "type": "MaskPreview+"
+          },
+          {
+            "flags": {},
+            "index": 12,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              },
+              {
+                "link": null,
+                "name": "size",
+                "type": "INT",
+                "widget": {
+                  "name": "size"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 12,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              2190,
+              950
+            ],
+            "properties": {
+              "Node name for S&R": "MaskExpandBatch+"
+            },
+            "size": {
+              "0": 210,
+              "1": 82
+            },
+            "type": "MaskExpandBatch+",
+            "widgets_values": [
+              80,
+              "repeat last"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 13,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              }
+            ],
+            "mode": 0,
+            "order": 13,
+            "pos": [
+              2568,
+              756
+            ],
+            "properties": {
+              "Node name for S&R": "MaskPreview+"
+            },
+            "size": {
+              "0": 203.88900756835938,
+              "1": 323.95977783203125
+            },
+            "type": "MaskPreview+"
+          }
+        ],
+        "packname": "",
+        "version": "0.0"
+      },
+      "yuyou-dev::mask_end": {
+        "author": "yuyou-dev",
+        "category": "mask_plus",
+        "config": {
+          "0": {
+            "input": {
+              "value": {
+                "name": "start"
+              }
+            }
+          },
+          "1": {
+            "input": {
+              "value": {
+                "name": "Length"
+              }
+            }
+          },
+          "2": {
+            "input": {
+              "value": {
+                "name": "end"
+              }
+            }
+          },
+          "3": {
+            "input": {
+              "end_frame": {
+                "visible": false
+              },
+              "start_frame": {
+                "visible": false
+              }
+            }
+          },
+          "4": {
+            "output": {
+              "1": {
+                "visible": false
+              }
+            }
+          },
+          "6": {
+            "output": {
+              "1": {
+                "visible": false
+              }
+            }
+          },
+          "7": {
+            "output": {
+              "0": {
+                "visible": true
+              }
+            }
+          }
+        },
+        "datetime": 1721201140441,
+        "external": [],
+        "links": [
+          [
+            1,
+            0,
+            3,
+            0,
+            50,
+            "INT"
+          ],
+          [
+            0,
+            0,
+            4,
+            0,
+            51,
+            "INT"
+          ],
+          [
+            1,
+            0,
+            4,
+            1,
+            50,
+            "INT"
+          ],
+          [
+            3,
+            0,
+            5,
+            0,
+            45,
+            "MASK"
+          ],
+          [
+            4,
+            0,
+            5,
+            1,
+            52,
+            "INT"
+          ],
+          [
+            4,
+            0,
+            6,
+            0,
+            52,
+            "INT"
+          ],
+          [
+            2,
+            0,
+            6,
+            1,
+            54,
+            "INT"
+          ],
+          [
+            5,
+            0,
+            7,
+            0,
+            48,
+            "MASK"
+          ],
+          [
+            6,
+            0,
+            7,
+            1,
+            53,
+            "INT"
+          ],
+          [
+            7,
+            0,
+            8,
+            0,
+            49,
+            "MASK"
+          ]
+        ],
+        "nodes": [
+          {
+            "flags": {},
+            "index": 0,
+            "mode": 0,
+            "order": 0,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              680,
+              660
+            ],
+            "properties": {
+              "Node name for S&R": "Int"
+            },
+            "size": {
+              "0": 210,
+              "1": 58
+            },
+            "title": "start",
+            "type": "Int",
+            "widgets_values": [
+              12
+            ]
+          },
+          {
+            "flags": {},
+            "index": 1,
+            "mode": 0,
+            "order": 1,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              680,
+              540
+            ],
+            "properties": {
+              "Node name for S&R": "Int"
+            },
+            "size": {
+              "0": 210,
+              "1": 58
+            },
+            "title": "Length",
+            "type": "Int",
+            "widgets_values": [
+              24
+            ]
+          },
+          {
+            "flags": {},
+            "index": 2,
+            "mode": 0,
+            "order": 2,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              682,
+              800
+            ],
+            "properties": {
+              "Node name for S&R": "Int"
+            },
+            "size": {
+              "0": 210,
+              "1": 58
+            },
+            "title": "end",
+            "type": "Int",
+            "widgets_values": [
+              6
+            ]
+          },
+          {
+            "flags": {},
+            "index": 3,
+            "inputs": [
+              {
+                "link": null,
+                "name": "frames",
+                "type": "INT",
+                "widget": {
+                  "name": "frames"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 3,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              982,
+              947
+            ],
+            "properties": {
+              "Node name for S&R": "TransitionMask+"
+            },
+            "size": {
+              "0": 210,
+              "1": 178
+            },
+            "type": "TransitionMask+",
+            "widgets_values": [
+              576,
+              1024,
+              24,
+              0,
+              9999,
+              "vertical slide",
+              "linear"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 4,
+            "inputs": [
+              {
+                "link": null,
+                "name": "a",
+                "type": "INT,FLOAT"
+              },
+              {
+                "link": null,
+                "name": "b",
+                "type": "INT,FLOAT"
+              }
+            ],
+            "mode": 0,
+            "order": 4,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              },
+              {
+                "links": null,
+                "name": "FLOAT",
+                "shape": 3,
+                "type": "FLOAT"
+              }
+            ],
+            "pos": [
+              978,
+              821
+            ],
+            "properties": {
+              "Node name for S&R": "SimpleMath+"
+            },
+            "size": {
+              "0": 210,
+              "1": 78
+            },
+            "type": "SimpleMath+",
+            "widgets_values": [
+              "a + b"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 5,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              },
+              {
+                "link": null,
+                "name": "size",
+                "type": "INT",
+                "widget": {
+                  "name": "size"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 5,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              1460,
+              920
+            ],
+            "properties": {
+              "Node name for S&R": "MaskExpandBatch+"
+            },
+            "size": {
+              "0": 210,
+              "1": 78
+            },
+            "type": "MaskExpandBatch+",
+            "widgets_values": [
+              26,
+              "repeat first"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 6,
+            "inputs": [
+              {
+                "link": null,
+                "name": "a",
+                "type": "INT,FLOAT"
+              },
+              {
+                "link": null,
+                "name": "b",
+                "type": "INT,FLOAT"
+              }
+            ],
+            "mode": 0,
+            "order": 6,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              },
+              {
+                "links": null,
+                "name": "FLOAT",
+                "shape": 3,
+                "type": "FLOAT"
+              }
+            ],
+            "pos": [
+              1460,
+              790
+            ],
+            "properties": {
+              "Node name for S&R": "SimpleMath+"
+            },
+            "size": {
+              "0": 210,
+              "1": 78
+            },
+            "type": "SimpleMath+",
+            "widgets_values": [
+              "a + b"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 7,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              },
+              {
+                "link": null,
+                "name": "size",
+                "type": "INT",
+                "widget": {
+                  "name": "size"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 7,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              1702,
+              807
+            ],
+            "properties": {
+              "Node name for S&R": "MaskExpandBatch+"
+            },
+            "size": {
+              "0": 210,
+              "1": 78
+            },
+            "type": "MaskExpandBatch+",
+            "widgets_values": [
+              30,
+              "repeat last"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 8,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              }
+            ],
+            "mode": 0,
+            "order": 8,
+            "pos": [
+              1930,
+              812
+            ],
+            "properties": {
+              "Node name for S&R": "MaskPreview+"
+            },
+            "size": {
+              "0": 210,
+              "1": 246
+            },
+            "type": "MaskPreview+"
+          }
+        ],
+        "packname": "",
+        "version": "0.0"
+      },
+      "yuyou-dev::mask_start": {
+        "author": "yuyou-dev",
+        "category": "MaskPlus",
+        "config": {
+          "0": {
+            "input": {
+              "value": {
+                "name": "start"
+              }
+            }
+          },
+          "1": {
+            "input": {
+              "value": {
+                "name": "Length"
+              }
+            }
+          },
+          "2": {
+            "input": {
+              "value": {
+                "name": "end"
+              }
+            }
+          },
+          "3": {
+            "input": {
+              "end_frame": {
+                "visible": false
+              },
+              "start_frame": {
+                "visible": false
+              }
+            }
+          },
+          "4": {
+            "output": {
+              "1": {
+                "visible": false
+              }
+            }
+          },
+          "6": {
+            "output": {
+              "1": {
+                "visible": false
+              }
+            }
+          },
+          "7": {
+            "output": {
+              "0": {
+                "visible": false
+              }
+            }
+          },
+          "8": {
+            "output": {
+              "0": {
+                "visible": true
+              }
+            }
+          }
+        },
+        "datetime": 1721200599036,
+        "external": [],
+        "links": [
+          [
+            1,
+            0,
+            3,
+            0,
+            50,
+            "INT"
+          ],
+          [
+            0,
+            0,
+            4,
+            0,
+            51,
+            "INT"
+          ],
+          [
+            1,
+            0,
+            4,
+            1,
+            50,
+            "INT"
+          ],
+          [
+            3,
+            0,
+            5,
+            0,
+            45,
+            "MASK"
+          ],
+          [
+            4,
+            0,
+            6,
+            0,
+            52,
+            "INT"
+          ],
+          [
+            2,
+            0,
+            6,
+            1,
+            54,
+            "INT"
+          ],
+          [
+            5,
+            0,
+            7,
+            0,
+            47,
+            "MASK"
+          ],
+          [
+            4,
+            0,
+            7,
+            1,
+            52,
+            "INT"
+          ],
+          [
+            7,
+            0,
+            8,
+            0,
+            48,
+            "MASK"
+          ],
+          [
+            6,
+            0,
+            8,
+            1,
+            53,
+            "INT"
+          ],
+          [
+            8,
+            0,
+            9,
+            0,
+            49,
+            "MASK"
+          ]
+        ],
+        "nodes": [
+          {
+            "flags": {},
+            "index": 0,
+            "mode": 0,
+            "order": 0,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              680,
+              660
+            ],
+            "properties": {
+              "Node name for S&R": "Int"
+            },
+            "size": {
+              "0": 210,
+              "1": 58
+            },
+            "title": "start",
+            "type": "Int",
+            "widgets_values": [
+              12
+            ]
+          },
+          {
+            "flags": {},
+            "index": 1,
+            "mode": 0,
+            "order": 1,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              680,
+              540
+            ],
+            "properties": {
+              "Node name for S&R": "Int"
+            },
+            "size": {
+              "0": 210,
+              "1": 58
+            },
+            "title": "Length",
+            "type": "Int",
+            "widgets_values": [
+              24
+            ]
+          },
+          {
+            "flags": {},
+            "index": 2,
+            "mode": 0,
+            "order": 2,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              682,
+              800
+            ],
+            "properties": {
+              "Node name for S&R": "Int"
+            },
+            "size": {
+              "0": 210,
+              "1": 58
+            },
+            "title": "end",
+            "type": "Int",
+            "widgets_values": [
+              6
+            ]
+          },
+          {
+            "flags": {},
+            "index": 3,
+            "inputs": [
+              {
+                "link": null,
+                "name": "frames",
+                "type": "INT",
+                "widget": {
+                  "name": "frames"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 3,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              982,
+              947
+            ],
+            "properties": {
+              "Node name for S&R": "TransitionMask+"
+            },
+            "size": {
+              "0": 210,
+              "1": 178
+            },
+            "type": "TransitionMask+",
+            "widgets_values": [
+              576,
+              1024,
+              24,
+              0,
+              9999,
+              "vertical slide",
+              "linear"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 4,
+            "inputs": [
+              {
+                "link": null,
+                "name": "a",
+                "type": "INT,FLOAT"
+              },
+              {
+                "link": null,
+                "name": "b",
+                "type": "INT,FLOAT"
+              }
+            ],
+            "mode": 0,
+            "order": 4,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              },
+              {
+                "links": null,
+                "name": "FLOAT",
+                "shape": 3,
+                "type": "FLOAT"
+              }
+            ],
+            "pos": [
+              1220,
+              810
+            ],
+            "properties": {
+              "Node name for S&R": "SimpleMath+"
+            },
+            "size": {
+              "0": 210,
+              "1": 78
+            },
+            "type": "SimpleMath+",
+            "widgets_values": [
+              "a + b"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 5,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              }
+            ],
+            "mode": 0,
+            "order": 5,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              1220,
+              940
+            ],
+            "properties": {
+              "Node name for S&R": "InvertMask"
+            },
+            "size": {
+              "0": 210,
+              "1": 26
+            },
+            "type": "InvertMask"
+          },
+          {
+            "flags": {},
+            "index": 6,
+            "inputs": [
+              {
+                "link": null,
+                "name": "a",
+                "type": "INT,FLOAT"
+              },
+              {
+                "link": null,
+                "name": "b",
+                "type": "INT,FLOAT"
+              }
+            ],
+            "mode": 0,
+            "order": 6,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              },
+              {
+                "links": null,
+                "name": "FLOAT",
+                "shape": 3,
+                "type": "FLOAT"
+              }
+            ],
+            "pos": [
+              1460,
+              790
+            ],
+            "properties": {
+              "Node name for S&R": "SimpleMath+"
+            },
+            "size": {
+              "0": 210,
+              "1": 78
+            },
+            "type": "SimpleMath+",
+            "widgets_values": [
+              "a + b"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 7,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              },
+              {
+                "link": null,
+                "name": "size",
+                "type": "INT",
+                "widget": {
+                  "name": "size"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 7,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              1460,
+              920
+            ],
+            "properties": {
+              "Node name for S&R": "MaskExpandBatch+"
+            },
+            "size": {
+              "0": 210,
+              "1": 78
+            },
+            "type": "MaskExpandBatch+",
+            "widgets_values": [
+              26,
+              "repeat first"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 8,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              },
+              {
+                "link": null,
+                "name": "size",
+                "type": "INT",
+                "widget": {
+                  "name": "size"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 8,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              1702,
+              807
+            ],
+            "properties": {
+              "Node name for S&R": "MaskExpandBatch+"
+            },
+            "size": {
+              "0": 210,
+              "1": 78
+            },
+            "type": "MaskExpandBatch+",
+            "widgets_values": [
+              30,
+              "repeat last"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 9,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              }
+            ],
+            "mode": 0,
+            "order": 9,
+            "pos": [
+              1930,
+              812
+            ],
+            "properties": {
+              "Node name for S&R": "MaskPreview+"
+            },
+            "size": {
+              "0": 210,
+              "1": 246
+            },
+            "type": "MaskPreview+"
+          }
+        ],
+        "packname": "",
+        "version": "0.0"
+      },
+      "yuyou-dev::mask_v2_center": {
+        "author": "yuyou-dev",
+        "category": "mask_v2_center",
+        "config": {
+          "3": {
+            "input": {
+              "end_frame": {
+                "visible": false
+              },
+              "start_frame": {
+                "visible": false
+              }
+            }
+          },
+          "4": {
+            "output": {
+              "1": {
+                "visible": false
+              }
+            }
+          }
+        },
+        "datetime": 1721204404310,
+        "external": [
+          [
+            8,
+            0,
+            "MASK"
+          ]
+        ],
+        "links": [
+          [
+            0,
+            0,
+            3,
+            0,
+            21,
+            "INT"
+          ],
+          [
+            2,
+            0,
+            4,
+            0,
+            29,
+            "INT"
+          ],
+          [
+            0,
+            0,
+            4,
+            1,
+            21,
+            "INT"
+          ],
+          [
+            3,
+            0,
+            5,
+            0,
+            2,
+            "MASK"
+          ],
+          [
+            3,
+            0,
+            6,
+            0,
+            2,
+            "MASK"
+          ],
+          [
+            5,
+            0,
+            6,
+            1,
+            1,
+            "MASK"
+          ],
+          [
+            6,
+            0,
+            7,
+            0,
+            13,
+            "MASK"
+          ],
+          [
+            4,
+            0,
+            7,
+            1,
+            31,
+            "INT"
+          ],
+          [
+            7,
+            0,
+            8,
+            0,
+            25,
+            "MASK"
+          ],
+          [
+            1,
+            0,
+            8,
+            1,
+            33,
+            "INT"
+          ]
+        ],
+        "nodes": [
+          {
+            "flags": {},
+            "index": 0,
+            "mode": 0,
+            "order": 0,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              991,
+              1133
+            ],
+            "properties": {
+              "Node name for S&R": "Int"
+            },
+            "size": {
+              "0": 210,
+              "1": 58
+            },
+            "title": "frame",
+            "type": "Int",
+            "widgets_values": [
+              16
+            ]
+          },
+          {
+            "flags": {},
+            "index": 1,
+            "mode": 0,
+            "order": 1,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              989,
+              898
+            ],
+            "properties": {
+              "Node name for S&R": "AddEndFrame"
+            },
+            "size": {
+              "0": 210,
+              "1": 58
+            },
+            "title": "total",
+            "type": "Int",
+            "widgets_values": [
+              85
+            ]
+          },
+          {
+            "flags": {},
+            "index": 2,
+            "mode": 0,
+            "order": 2,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              983,
+              1014
+            ],
+            "properties": {
+              "Node name for S&R": "StartFrame"
+            },
+            "size": {
+              "0": 210,
+              "1": 58
+            },
+            "title": "StartFrame",
+            "type": "Int",
+            "widgets_values": [
+              30
+            ]
+          },
+          {
+            "flags": {},
+            "index": 3,
+            "inputs": [
+              {
+                "link": null,
+                "name": "frames",
+                "type": "INT",
+                "widget": {
+                  "name": "frames"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 3,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              1279,
+              1145
+            ],
+            "properties": {
+              "Node name for S&R": "TransitionMask+"
+            },
+            "size": {
+              "0": 210,
+              "1": 178
+            },
+            "type": "TransitionMask+",
+            "widgets_values": [
+              576,
+              1024,
+              34,
+              0,
+              9999,
+              "vertical slide",
+              "linear"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 4,
+            "inputs": [
+              {
+                "link": null,
+                "name": "a",
+                "type": "INT,FLOAT"
+              },
+              {
+                "link": null,
+                "name": "b",
+                "type": "INT,FLOAT"
+              }
+            ],
+            "mode": 0,
+            "order": 4,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              },
+              {
+                "links": null,
+                "name": "FLOAT",
+                "shape": 3,
+                "type": "FLOAT"
+              }
+            ],
+            "pos": [
+              1683,
+              1016
+            ],
+            "properties": {
+              "Node name for S&R": "SimpleMath+"
+            },
+            "size": {
+              "0": 210,
+              "1": 78
+            },
+            "type": "SimpleMath+",
+            "widgets_values": [
+              "a + b * 2"
+            ]
+          },
+          {
+            "bgcolor": "#3f5159",
+            "color": "#2a363b",
+            "flags": {},
+            "index": 5,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              }
+            ],
+            "mode": 0,
+            "order": 5,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              1510,
+              1160
+            ],
+            "properties": {
+              "Node name for S&R": "InvertMask"
+            },
+            "size": {
+              "0": 140,
+              "1": 26
+            },
+            "type": "InvertMask"
+          },
+          {
+            "flags": {},
+            "index": 6,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask1",
+                "type": "MASK"
+              },
+              {
+                "link": null,
+                "name": "mask2",
+                "type": "MASK"
+              }
+            ],
+            "mode": 0,
+            "order": 6,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              1688,
+              1143
+            ],
+            "properties": {
+              "Node name for S&R": "MaskBatch+"
+            },
+            "size": {
+              "0": 210,
+              "1": 46
+            },
+            "type": "MaskBatch+"
+          },
+          {
+            "flags": {},
+            "index": 7,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              },
+              {
+                "link": null,
+                "name": "size",
+                "type": "INT",
+                "widget": {
+                  "name": "size"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 7,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              1950,
+              1080
+            ],
+            "properties": {
+              "Node name for S&R": "MaskExpandBatch+"
+            },
+            "size": {
+              "0": 210,
+              "1": 82
+            },
+            "type": "MaskExpandBatch+",
+            "widgets_values": [
+              50,
+              "repeat first"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 8,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              },
+              {
+                "link": null,
+                "name": "size",
+                "type": "INT",
+                "widget": {
+                  "name": "size"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 8,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              2179,
+              1085
+            ],
+            "properties": {
+              "Node name for S&R": "MaskExpandBatch+"
+            },
+            "size": {
+              "0": 210,
+              "1": 82
+            },
+            "type": "MaskExpandBatch+",
+            "widgets_values": [
+              80,
+              "repeat last"
+            ]
+          }
+        ],
+        "packname": "",
+        "version": "0.0"
+      },
+      "yuyou-dev::mask_v2_end": {
+        "author": "yuyou-dev",
+        "category": "mask_plus",
+        "config": {
+          "3": {
+            "input": {
+              "end_frame": {
+                "visible": false
+              },
+              "start_frame": {
+                "visible": false
+              }
+            }
+          },
+          "4": {
+            "output": {
+              "1": {
+                "visible": false
+              }
+            }
+          }
+        },
+        "datetime": 1721205402384,
+        "external": [
+          [
+            6,
+            0,
+            "MASK"
+          ]
+        ],
+        "links": [
+          [
+            2,
+            0,
+            3,
+            0,
+            39,
+            "INT"
+          ],
+          [
+            1,
+            0,
+            4,
+            0,
+            40,
+            "INT"
+          ],
+          [
+            2,
+            0,
+            4,
+            1,
+            39,
+            "INT"
+          ],
+          [
+            3,
+            0,
+            5,
+            0,
+            42,
+            "MASK"
+          ],
+          [
+            4,
+            0,
+            5,
+            1,
+            43,
+            "INT"
+          ],
+          [
+            5,
+            0,
+            6,
+            0,
+            45,
+            "MASK"
+          ],
+          [
+            0,
+            0,
+            6,
+            1,
+            41,
+            "INT"
+          ]
+        ],
+        "nodes": [
+          {
+            "flags": {},
+            "index": 0,
+            "mode": 0,
+            "order": 0,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              1503,
+              1248
+            ],
+            "properties": {
+              "Node name for S&R": "Int"
+            },
+            "size": {
+              "0": 210,
+              "1": 58
+            },
+            "title": "total",
+            "type": "Int",
+            "widgets_values": [
+              85
+            ]
+          },
+          {
+            "flags": {},
+            "index": 1,
+            "mode": 0,
+            "order": 1,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              1507,
+              1123
+            ],
+            "properties": {
+              "Node name for S&R": "Int"
+            },
+            "size": {
+              "0": 210,
+              "1": 58
+            },
+            "title": "start",
+            "type": "Int",
+            "widgets_values": [
+              30
+            ]
+          },
+          {
+            "flags": {},
+            "index": 2,
+            "mode": 0,
+            "order": 2,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              1501,
+              988
+            ],
+            "properties": {
+              "Node name for S&R": "Int"
+            },
+            "size": {
+              "0": 210,
+              "1": 58
+            },
+            "title": "Length",
+            "type": "Int",
+            "widgets_values": [
+              43
+            ]
+          },
+          {
+            "flags": {},
+            "index": 3,
+            "inputs": [
+              {
+                "link": null,
+                "name": "frames",
+                "type": "INT",
+                "widget": {
+                  "name": "frames"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 3,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              1799,
+              1250
+            ],
+            "properties": {
+              "Node name for S&R": "TransitionMask+"
+            },
+            "size": {
+              "0": 210,
+              "1": 178
+            },
+            "type": "TransitionMask+",
+            "widgets_values": [
+              512,
+              512,
+              24,
+              0,
+              9999,
+              "vertical slide",
+              "linear"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 4,
+            "inputs": [
+              {
+                "link": null,
+                "name": "a",
+                "type": "INT,FLOAT"
+              },
+              {
+                "link": null,
+                "name": "b",
+                "type": "INT,FLOAT"
+              }
+            ],
+            "mode": 0,
+            "order": 4,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              },
+              {
+                "links": null,
+                "name": "FLOAT",
+                "shape": 3,
+                "type": "FLOAT"
+              }
+            ],
+            "pos": [
+              2036,
+              1264
+            ],
+            "properties": {
+              "Node name for S&R": "SimpleMath+"
+            },
+            "size": {
+              "0": 210,
+              "1": 78
+            },
+            "type": "SimpleMath+",
+            "widgets_values": [
+              "a+b"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 5,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              },
+              {
+                "link": null,
+                "name": "size",
+                "type": "INT",
+                "widget": {
+                  "name": "size"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 5,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              2275,
+              1240
+            ],
+            "properties": {
+              "Node name for S&R": "MaskExpandBatch+"
+            },
+            "size": {
+              "0": 210,
+              "1": 78
+            },
+            "type": "MaskExpandBatch+",
+            "widgets_values": [
+              26,
+              "repeat first"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 6,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              },
+              {
+                "link": null,
+                "name": "size",
+                "type": "INT",
+                "widget": {
+                  "name": "size"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 6,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              2507,
+              1239
+            ],
+            "properties": {
+              "Node name for S&R": "MaskExpandBatch+"
+            },
+            "size": {
+              "0": 210,
+              "1": 78
+            },
+            "type": "MaskExpandBatch+",
+            "widgets_values": [
+              30,
+              "repeat last"
+            ]
+          }
+        ],
+        "packname": "",
+        "version": "0.0"
+      },
+      "yuyou-dev::mask_v2_start": {
+        "author": "yuyou-dev",
+        "category": "mask_plus",
+        "datetime": 1721203574817,
+        "external": [],
+        "links": [
+          [
+            0,
+            0,
+            3,
+            0,
+            50,
+            "INT"
+          ],
+          [
+            1,
+            0,
+            4,
+            0,
+            51,
+            "INT"
+          ],
+          [
+            0,
+            0,
+            4,
+            1,
+            50,
+            "INT"
+          ],
+          [
+            3,
+            0,
+            5,
+            0,
+            45,
+            "MASK"
+          ],
+          [
+            5,
+            0,
+            6,
+            0,
+            47,
+            "MASK"
+          ],
+          [
+            4,
+            0,
+            6,
+            1,
+            52,
+            "INT"
+          ],
+          [
+            6,
+            0,
+            7,
+            0,
+            48,
+            "MASK"
+          ],
+          [
+            2,
+            0,
+            7,
+            1,
+            54,
+            "INT"
+          ],
+          [
+            7,
+            0,
+            8,
+            0,
+            49,
+            "MASK"
+          ]
+        ],
+        "nodes": [
+          {
+            "flags": {},
+            "index": 0,
+            "mode": 0,
+            "order": 0,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              680,
+              540
+            ],
+            "properties": {
+              "Node name for S&R": "Int"
+            },
+            "size": {
+              "0": 210,
+              "1": 58
+            },
+            "title": "Length",
+            "type": "Int",
+            "widgets_values": [
+              24
+            ]
+          },
+          {
+            "flags": {},
+            "index": 1,
+            "mode": 0,
+            "order": 1,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              686,
+              675
+            ],
+            "properties": {
+              "Node name for S&R": "Int"
+            },
+            "size": {
+              "0": 210,
+              "1": 58
+            },
+            "title": "start",
+            "type": "Int",
+            "widgets_values": [
+              12
+            ]
+          },
+          {
+            "flags": {},
+            "index": 2,
+            "mode": 0,
+            "order": 2,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              682,
+              800
+            ],
+            "properties": {
+              "Node name for S&R": "Int"
+            },
+            "size": {
+              "0": 210,
+              "1": 58
+            },
+            "title": "total",
+            "type": "Int",
+            "widgets_values": [
+              60
+            ]
+          },
+          {
+            "flags": {},
+            "index": 3,
+            "inputs": [
+              {
+                "link": null,
+                "name": "frames",
+                "type": "INT",
+                "widget": {
+                  "name": "frames"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 3,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              982,
+              947
+            ],
+            "properties": {
+              "Node name for S&R": "TransitionMask+"
+            },
+            "size": {
+              "0": 210,
+              "1": 178
+            },
+            "type": "TransitionMask+",
+            "widgets_values": [
+              576,
+              1024,
+              24,
+              0,
+              9999,
+              "vertical slide",
+              "linear"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 4,
+            "inputs": [
+              {
+                "link": null,
+                "name": "a",
+                "type": "INT,FLOAT"
+              },
+              {
+                "link": null,
+                "name": "b",
+                "type": "INT,FLOAT"
+              }
+            ],
+            "mode": 0,
+            "order": 4,
+            "outputs": [
+              {
+                "links": [],
+                "name": "INT",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              },
+              {
+                "links": null,
+                "name": "FLOAT",
+                "shape": 3,
+                "type": "FLOAT"
+              }
+            ],
+            "pos": [
+              1216,
+              797
+            ],
+            "properties": {
+              "Node name for S&R": "SimpleMath+"
+            },
+            "size": {
+              "0": 210,
+              "1": 78
+            },
+            "type": "SimpleMath+",
+            "widgets_values": [
+              "a + b"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 5,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              }
+            ],
+            "mode": 0,
+            "order": 5,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              1220,
+              940
+            ],
+            "properties": {
+              "Node name for S&R": "InvertMask"
+            },
+            "size": {
+              "0": 210,
+              "1": 26
+            },
+            "type": "InvertMask"
+          },
+          {
+            "flags": {},
+            "index": 6,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              },
+              {
+                "link": null,
+                "name": "size",
+                "type": "INT",
+                "widget": {
+                  "name": "size"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 6,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              1460,
+              920
+            ],
+            "properties": {
+              "Node name for S&R": "MaskExpandBatch+"
+            },
+            "size": {
+              "0": 210,
+              "1": 78
+            },
+            "type": "MaskExpandBatch+",
+            "widgets_values": [
+              26,
+              "repeat first"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 7,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              },
+              {
+                "link": null,
+                "name": "size",
+                "type": "INT",
+                "widget": {
+                  "name": "size"
+                }
+              }
+            ],
+            "mode": 0,
+            "order": 7,
+            "outputs": [
+              {
+                "links": [],
+                "name": "MASK",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "MASK"
+              }
+            ],
+            "pos": [
+              1698,
+              781
+            ],
+            "properties": {
+              "Node name for S&R": "MaskExpandBatch+"
+            },
+            "size": {
+              "0": 210,
+              "1": 78
+            },
+            "type": "MaskExpandBatch+",
+            "widgets_values": [
+              30,
+              "repeat last"
+            ]
+          },
+          {
+            "flags": {},
+            "index": 8,
+            "inputs": [
+              {
+                "link": null,
+                "name": "mask",
+                "type": "MASK"
+              }
+            ],
+            "mode": 0,
+            "order": 8,
+            "pos": [
+              1930,
+              812
+            ],
+            "properties": {
+              "Node name for S&R": "MaskPreview+"
+            },
+            "size": {
+              "0": 210,
+              "1": 246
+            },
+            "type": "MaskPreview+"
+          }
+        ],
+        "packname": "",
+        "version": "0.0"
+      }
+    },
+    "0246.VERSION": [
+      0,
+      0,
+      4
+    ],
+    "workspace_info": {
+      "id": "sDw3oUXSJZ0dKCIlbShCV",
+      "saveLock": false,
+      "cloudID": null,
+      "coverMediaPath": null
+    }
+  },
+  "version": 0.4
+}
